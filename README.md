@@ -5,14 +5,14 @@ I'm a cyber security student at ISETCOM, passionate about cybersecurity and prog
 ## 🔭 I’m currently working on
 
 - Strengthening my skills in cybersecurity through hands-on projects
-- Building web applications using Python, PHP, MySQL, HTML, CSS, and JavaScript
-- Exploring the world of Go programming
+- Building web applications using MERN, Python, PHP, MySQL, HTML, CSS, and JavaScript
+- Exploring the world of Go programming, Bash Scripting & Linux
 
 ## 🌱 I’m currently learning
 
 - Advanced cybersecurity techniques
-- Deepening my understanding of Python and Go programming languages
-- Enhancing my knowledge of web development frameworks like Bootstrap
+- Deepening my understanding Go programming languages
+- Enhancing my knowledge of Cyber Sec 
 
 ## 💬 Ask me about
 
