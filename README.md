@@ -33,7 +33,6 @@
 [![ Code: JavaScript     ](https://img.shields.io/static/v1?style=for-the-badge&logoColor=white&labelColor=424242&color=bebebe&label=Code&message=JavaScript&logo=javascript)]()
 [![ Code: React          ](https://img.shields.io/static/v1?style=for-the-badge&logoColor=white&labelColor=424242&color=bebebe&label=Code&message=React&logo=react)]()
 [![ Code: Express        ](https://img.shields.io/static/v1?style=for-the-badge&logoColor=white&labelColor=424242&color=bebebe&label=Code&message=Express&logo=express)]()
-[![ Code: Flutter        ](https://img.shields.io/static/v1?style=for-the-badge&logoColor=white&labelColor=424242&color=bebebe&label=Code&message=Flutter&logo=flutter)]()
 [![ Tool: Jupyter        ](https://img.shields.io/static/v1?style=for-the-badge&logoColor=white&labelColor=424242&color=bebebe&label=Tools&message=Jupyter%20Notebook&logo=jupyter)]()
 [![ Tool: Sublime Text   ](https://img.shields.io/static/v1?style=for-the-badge&logoColor=white&labelColor=424242&color=bebebe&label=Tools&message=Sublime%20Text&logo=sublimetext)]()
 [![ Tool: IntelliJ IDEA  ](https://img.shields.io/static/v1?style=for-the-badge&logoColor=white&labelColor=424242&color=bebebe&label=Tools&message=IntelliJ%20IDEA&logo=intellijidea)]()
