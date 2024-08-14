@@ -1,12 +1,10 @@
 # Hi there, I'm Saleh Eddine Touil! 👋
 
-[![QWQORO](images/gif.gif)](https://github.com/qwqoro)
+[![QWQORO](images/gif.gif)](https://github.com/saleheddinetouil)
 
-# Hello! 👋
-<img align="right" alt="🐼" width="28%" src="images/🐼.jpg" />
 
-[![ Pronouns         ](https://img.shields.io/badge/[%20She%20/%20Her%20]-informational?style=flat-square&color=eeeeee)]()
-[![ Languages        ](https://img.shields.io/badge/[%20RU%20|%20UA%20|%20EN%20]-informational?style=flat-square&color=eeeeee)]()
+
+[![ Languages        ](https://img.shields.io/badge/[%20AR%20|%20FR%20|%20EN%20]-informational?style=flat-square&color=eeeeee)]()
 - 🔓 Cyber Security Analysis Specialist
 - 🐉 Offensive Security Certified Professional [![ OSCP ](https://img.shields.io/badge/(%20OSCP%20)-informational?style=flat-square&color=eeeeee)]()
 - ⚙️ I take part in Web/Mobile Application Penetration Testing
