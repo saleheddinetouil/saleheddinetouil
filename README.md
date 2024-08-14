@@ -1,8 +1,5 @@
 # Hi there, I'm Saleh Eddine Touil! 👋
 
-[![QWQORO](images/gif.gif)](https://github.com/saleheddinetouil)
-
-
 
 [![ Languages        ](https://img.shields.io/badge/[%20AR%20|%20FR%20|%20EN%20]-informational?style=flat-square&color=eeeeee)]()
 - 🔓 Cyber Security Enthusiast
