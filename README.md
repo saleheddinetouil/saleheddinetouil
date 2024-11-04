@@ -9,8 +9,9 @@
 - ⚔️ I participate in CTF events + solve labs
 - ⌨️ I hack, code & learn because I love it
 <div align=left>
-	<a href="https://drive.google.com/file/d/11koWi7U4apvZTPGWksTcJWcjainh_dvg/view?usp=sharing"><img src="https://img.shields.io/badge/CV%20[EN]-informational?style=for-the-badge&color=808080"/></a>&nbsp;
-		<a href="https://saleheddinetouil.gitbook.io"><img src="https://img.shields.io/badge/CTF%20WRITEUPS-informational?style=for-the-badge&color=808080"/></a>&nbsp;
+	<a href="#"><img src="https://img.shields.io/badge/CV%20[EN]-informational?style=for-the-badge&color=808080"/></a>&nbsp;
+		<a href="https://cybersec.salehtouil.tech"><img src="https://img.shields.io/badge/CTF%20WRITEUPS-informational?style=for-the-badge&color=808080"/></a>&nbsp;
+		<a href="#"><img src="https://img.shields.io/badge/PORTFOLIO-informational?style=for-the-badge&color=808080"/></a>&nbsp;
 </div>
 
 
