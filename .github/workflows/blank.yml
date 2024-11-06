@@ -1,17 +1,45 @@
-name: My First Workflow
+name: CI
 
-on:
-  push:
-    branches:
-      - main  # Run the workflow when changes are pushed to the main branch
+on: 
+  workflow_dispatch:
+    inputs:
+      local_port:
+        description: 'Enter the local port to expose:'
+        required: true
+        default: '3389' # Default to RDP port
+      ngrok_auth_token:
+        description: 'Enter your ngrok auth token:'
+        required: true
+        type: 'string' # Explicitly define as string type for secrets
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - name: Download ngrok
+      run: Invoke-WebRequest https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-windows-amd64.zip -OutFile ngrok.zip
 
-      - name: Say hello
-        run: echo "Hello, world!"
+    - name: Extract ngrok
+      run: Expand-Archive ngrok.zip
+
+    - name: Authenticate ngrok
+      run: .\ngrok\ngrok.exe authtoken ${{ inputs.ngrok_auth_token }} # Use input instead of secret
+
+    - name: Enable Terminal Server
+      run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
+
+    - name: Enable RDP Firewall Rule
+      run: Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
+
+    - name: Enable User Authentication for RDP
+      run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
+
+    - name: Create Local User (if needed - consider alternatives)
+      run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "P@ssw0rd!" -Force)  # **Caution: Storing passwords directly is not recommended**
+
+    - name: Create ngrok Tunnel
+      run: .\ngrok\ngrok.exe tcp ${{ inputs.local_port }} # Use input for local port
+      
+    - name: Print ngrok URL (Important!)
+      run: .\ngrok\ngrok.exe http -log=stdout 80 | findstr /i "url"  # Replace 80 with the correct port if needed. This will output the URL to the console.
