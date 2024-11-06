@@ -4,22 +4,45 @@ on: [push, workflow_dispatch]
 
 jobs:
   build:
-
     runs-on: windows-latest
-
     steps:
-    - name: Download
-      run: Invoke-WebRequest https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-windows-amd64.zip -OutFile ngrok.zip
-    - name: Extract
-      run: Expand-Archive ngrok.zip
-    - name: Auth
-      run: .\ngrok\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
-      env:
-        NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
-    - name: Enable TS
-      run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
-    - run: Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
-    - run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
-    - run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "P@ssw0rd!" -Force)
-    - name: Create Tunnel
-      run: .\ngrok\ngrok.exe tcp 3389
+      - name: Prompt for IP Address and Port
+        uses: actions/github-script@v6
+        id: get_user_input
+        with:
+          script: |
+            const ipAddress = await core.getInput('ip_address', { required: true });
+            const port = await core.getInput('port', { required: true });
+            core.setOutput('ip_address', ipAddress);
+            core.setOutput('port', port);
+          
+      - name: Download ngrok
+        run: Invoke-WebRequest https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-windows-amd64.zip -OutFile ngrok.zip
+
+      - name: Extract ngrok
+        run: Expand-Archive ngrok.zip
+
+      - name: Auth ngrok (If using a licensed version or requiring specific features) 
+        if: inputs.ngrok_auth_token
+        run: .\ngrok\ngrok.exe authtoken ${{ inputs.ngrok_auth_token }} 
+        env:
+          NGROK_AUTH_TOKEN: ${{ inputs.ngrok_auth_token }} # Optional. Only needed for authentication, not local use.
+
+
+      - name: Enable TS
+        run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
+
+      - name: Enable Firewall Rule for RDP
+        run: Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
+
+      - name: Set RDP User Authentication
+        run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
+
+      - name: Set Local User (If RDP access is required within the workflow) – CAUTION: Use with care!
+        run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "P@ssw0rd!" -Force) #  Insecure.  Replace with a secure password generation/retrieval method.
+
+      - name: Start Local TCP Server (Example. Replace with your actual server command)
+        run: python -m http.server ${{ steps.get_user_input.outputs.port }}  # Example: starting a simple Python web server. Adapt to your needs.
+
+      - name: Create Tunnel (Replace with SSH or your chosen method)
+        run: ssh -R 0.0.0.0:${{ steps.get_user_input.outputs.port }}:localhost:${{ steps.get_user_input.outputs.port }} ${{ secrets.SSH_SERVER }} # Replace with your server details
