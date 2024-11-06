@@ -1,7 +1,9 @@
 # السلام عليكم و رحمة الله و بركاته
 # I'm Saleh Eddine Touil! 👋
-<div align=right>
+<div align="right">
+	
 ![](https://komarev.com/ghpvc/?username=saleheddinetouil)
+
 </div>
 
 [![ Languages        ](https://img.shields.io/badge/[%20AR%20|%20FR%20|%20EN%20]-informational?style=flat-square&color=eeeeee)]()
