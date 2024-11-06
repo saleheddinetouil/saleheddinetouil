@@ -1,4 +1,4 @@
-name: Programmingwithkumaresan
+name: RDP
 
 on:
   workflow_dispatch:
