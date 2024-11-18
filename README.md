@@ -66,4 +66,4 @@
 - Open-source initiatives in programming
 
 
-![LeetCode Badges](https://leetcode-badge-showcase.vercel.app/api?username={saleheddinetouil}&theme={black})
+![LeetCode Badges](https://leetcode-badge-showcase.vercel.app/api?username=saleheddinetouil&theme=black)
