@@ -65,6 +65,6 @@
 - Web development projects
 - Open-source initiatives in programming
 
-![](https://leetcard.jacoblin.cool/saleheddinetouil?border=0&radius=20)
+![LeetCode Stats](https://leetcard.jacoblin.cool/saleheddinetouil?border=0&radius=20)
 
-![LeetCode Badges](https://leetcode-badge-showcase.vercel.app/api?username=saleheddinetouil&theme=black)
+
