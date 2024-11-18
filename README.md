@@ -66,5 +66,6 @@
 - Open-source initiatives in programming
 
 ![LeetCode Stats](https://leetcard.jacoblin.cool/saleheddinetouil?border=0&radius=20)
+[![Saleh's GitHub stats](https://github-readme-stats.vercel.app/api?username=saleheddinetouil)]
 
 
